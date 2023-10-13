@@ -4,6 +4,7 @@ const alertText = document.querySelector('.alert');
 
 buttonContenitore.addEventListener('click', function(){
     contenitore = [];
+    let contenitoreCodaArray = [];
     alertText.classList.remove('alert-danger');
     let inputContenitore = parseInt(document.getElementById('contenitore').value);
     let numeroCodaArray = parseInt(document.getElementById('numero-coda').value);
@@ -15,11 +16,15 @@ buttonContenitore.addEventListener('click', function(){
     } else{
         for(let i = 0; i < inputContenitore; i++){
             numeroGenerato = getRndInteger(0, 100);
-            contenitore.push(numeroGenerato);
+            contenitore.push(numeroGenerato + ' ');
+        }
+        for(let c = contenitore.length - numeroCodaArray; c < contenitore.length; c++){
+            contenitoreCodaArray.push(contenitore[c]);
         }
         console.log(contenitore);
+        console.log(contenitoreCodaArray);
         alertText.innerHTML = `Gli ultimi elementi della tua lista sono:
-        <div class = 'container'>${contenitore.slice(contenitore.length - numeroCodaArray, contenitore.length)} </div>`;
+        <div class = 'container'>${contenitoreCodaArray} </div>`;
         alertText.classList.add('alert-success');
     }
     alertText.classList.remove('d-none');
