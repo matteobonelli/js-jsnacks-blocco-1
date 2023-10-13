@@ -15,7 +15,7 @@ buttonContenitore.addEventListener('click', function(){
         
     } else{
         for(let i = 0; i < inputContenitore; i++){
-            numeroGenerato = getRndInteger(0, 100);
+           let numeroGenerato = getRndInteger(0, 100);
             contenitore.push(numeroGenerato + ' ');
         }
         for(let c = contenitore.length - numeroCodaArray; c < contenitore.length; c++){
