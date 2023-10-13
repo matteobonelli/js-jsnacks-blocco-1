@@ -18,8 +18,8 @@ buttonContenitore.addEventListener('click', function(){
             contenitore.push(numeroGenerato);
         }
         console.log(contenitore);
-        alertText.innerText = `Gli ultimi elementi della tua lista sono:
-     ${contenitore.slice(contenitore.length - numeroCodaArray, contenitore.length)}`;
+        alertText.innerHTML = `Gli ultimi elementi della tua lista sono:
+        <div class = 'container'>${contenitore.slice(contenitore.length - numeroCodaArray, contenitore.length)} </div>`;
         alertText.classList.add('alert-success');
     }
     alertText.classList.remove('d-none');
