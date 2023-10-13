@@ -6,8 +6,9 @@ buttonContenitore.addEventListener('click', function(){
     contenitore = [];
     alertText.classList.remove('alert-danger');
     let inputContenitore = parseInt(document.getElementById('contenitore').value);
-    console.log(inputContenitore);
-    if(isNaN(inputContenitore)){
+    let numeroCodaArray = parseInt(document.getElementById('numero-coda').value);
+    console.log(inputContenitore, numeroCodaArray);
+    if(isNaN(inputContenitore) || isNaN(numeroCodaArray) || numeroCodaArray > inputContenitore){
         alertText.innerText = 'Devi inserire un numero valido';
         alertText.classList.add('alert-danger');
         
@@ -18,7 +19,7 @@ buttonContenitore.addEventListener('click', function(){
         }
         console.log(contenitore);
         alertText.innerText = `Gli ultimi elementi della tua lista sono:
-     ${contenitore.slice(contenitore.length - 5, contenitore.length)}`;
+     ${contenitore.slice(contenitore.length - numeroCodaArray, contenitore.length)}`;
         alertText.classList.add('alert-success');
     }
     alertText.classList.remove('d-none');
